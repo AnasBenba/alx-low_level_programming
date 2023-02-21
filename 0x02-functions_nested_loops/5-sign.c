@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* print_sign -> check for lowercase characters
+* print_sign -> check if the number is bigger then or equal or less then 0
 * Return: return 1 or 0 or -1 depending on condition
 * @n: number to check
 */
