@@ -16,10 +16,6 @@ void print_alphabet_x10(void)
 			j++;
 		}
 		j = 'a';
-		if (i != 9)
-		{
-			_putchar('\n');
-		}
 		i++;
 	}
 }
