@@ -10,7 +10,7 @@ int print_last_digit(int n)
 	int last = 0;
 	int i = 0;
 
-	while (i < 1)
+	while (i < 2)
 	{
 		if (n >= 0)
 		{
@@ -22,10 +22,8 @@ int print_last_digit(int n)
 		{
 			n = n * -1;
 			last = n % 10;
-			_putchar(last + '0');
-			_putchar(last + '0');
 			i++;
 		}
 	}
-	return (0);
+	return (last);
 }
