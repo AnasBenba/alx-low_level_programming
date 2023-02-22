@@ -9,13 +9,15 @@
 int sum_of_multiples(int n)
 {
 	int sum = 0;
+	int i = 0;
 
-	for (int i = 1; i < n; i++)
+	while (i < n)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
 			sum += i;
 		}
+		i++;
 	}
 	printf("%d", sum);
 }
