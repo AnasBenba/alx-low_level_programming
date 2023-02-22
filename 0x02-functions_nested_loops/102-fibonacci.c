@@ -15,11 +15,11 @@ int main(void)
 	{
 		if (i == 50)
 		{
-			printf("%l \n", next);
+			printf("%lu \n", next);
 		}
 		else
 		{
-			printf("%l, ", next);
+			printf("%lu, ", next);
 		}
 
 		a = b;
