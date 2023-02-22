@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (i == 50)
 		{
-			printf("%lu \n", next);
+			printf("%lu\n", next);
 		}
 		else
 		{
