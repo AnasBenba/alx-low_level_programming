@@ -1,17 +1,14 @@
-#include "main.h"
 #include <stdio.h>
-
 /**
-* sum_of_multiples -> function that prints the sum of multiples
-* @n: number to use
-* Return: nothing
+* main -> prints the sum of multiples below 1024
+* Return: 0
 */
-int sum_of_multiples(int n)
+int main(void)
 {
 	int sum = 0;
 	int i = 0;
 
-	while (i < n)
+	while (i < 1024)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
