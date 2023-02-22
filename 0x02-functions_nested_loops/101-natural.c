@@ -20,4 +20,5 @@ int sum_of_multiples(int n)
 		i++;
 	}
 	printf("%d", sum);
+	return (0);
 }
