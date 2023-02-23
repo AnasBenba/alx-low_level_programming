@@ -2,9 +2,7 @@
 
 /**
 * main -> function that prints the numbers from 1 to 100
-*  But for multiples of 3 prints Fizz and for multiples of 5 prints Buzz
-*  and for multiples of both 3 and 5 prints FizzBuzz
-* Return: 0
+*  Return: 0
 */
 int main(void)
 {
