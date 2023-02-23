@@ -15,17 +15,17 @@ void more_numbers(void)
 		{
 			if (a <= 9)
 			{
-				putchar(a + '0');
+				_putchar(a + '0');
 				a++;
 			}
 			else
 			{
-				putchar(((a - a % 10) / 10) + '0');
-				putchar((a % 10) + '0');
+				_putchar(((a - a % 10) / 10) + '0');
+				_putchar((a % 10) + '0');
 				a++;
 			}
 		}
 		i++;
-		putchar('\n');
+		_putchar('\n');
 	}
 }
