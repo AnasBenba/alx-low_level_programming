@@ -7,13 +7,13 @@
 void rev_string(char *s)
 {
 	int len = 0;
+	int i = 0;
 	char temp;
 
-	while (s[len] != '\0')
+	while (s[i++])
 	{
 		len++;
 	}
-	int i = (len - 1);
 
 	while (i >= (len / 2))
 	{
