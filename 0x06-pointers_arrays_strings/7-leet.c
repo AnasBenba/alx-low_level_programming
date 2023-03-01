@@ -7,12 +7,13 @@
  */
 char *leet(char *s)
 {
+	inr i, j;
 	char *C = "4433007711";
 	char *a = "aAeEoOlLtT";
 
-	for (int i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (int j = 0; a[j] != '\0'; j++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
 			if (s[i] == a[j])
 			{
