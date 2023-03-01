@@ -7,7 +7,7 @@
  */
 char *leet(char *s)
 {
-	char *C = "4433001177";
+	char *C = "4433007711";
 	char *a = "aAeEoOlLtT";
 
 	for (int i = 0; s[i] != '\0'; i++)
