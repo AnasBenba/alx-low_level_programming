@@ -7,7 +7,7 @@
  */
 char *leet(char *s)
 {
-	inr i, j;
+	int i, j;
 	char *C = "4433007711";
 	char *a = "aAeEoOlLtT";
 
