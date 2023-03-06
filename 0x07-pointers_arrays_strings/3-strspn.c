@@ -44,5 +44,9 @@ unsigned int _strspn(char *s, char *accept)
 		count++;
 		p++;
 	}
+	if (*accept == '\0')
+	{
+		return (0);
+	}
 	return (count);
 }
