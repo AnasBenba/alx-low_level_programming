@@ -39,7 +39,6 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		if (_strchr(accept, *p) == NULL)
 		{
-			return (0);
 			break;
 		}
 		count++;
