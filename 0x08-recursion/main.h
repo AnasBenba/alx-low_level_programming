@@ -13,6 +13,6 @@ int _sqrt(int n, int i);
 int _sqrt_recursion(int n);
 int is_palindrome(char *s);
 int _palindrome(char *s, int a, int b);
-int _length(char *s)
+int _length(char *s);
 
 #endif
