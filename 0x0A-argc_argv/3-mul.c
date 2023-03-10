@@ -10,30 +10,17 @@
  */
 int main(int argc, char *argv[])
 {
-	char *s = "Error";
+	int result, num1, num2;
 
-	if (argc < 3)
+	if (argc != 3)
 	{
-		int i = 0;
-
-		while (s[i] != '\0')
-		{
-			_putchar(s[i]);
-			i++;
-		}
-		_putchar('\n');
+		printf("%s\n", "Error");
 		return (1);
 	}
-	else
-	{
-		long int num = 1;
-		int i;
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	result = num1 * num2;
 
-		for (i = 1; i < argc; i++)
-		{
-			num *= _atoi(argv[i]);
-		}
-		printf("%ld\n", num);
-	}
+	printf("%d\n", result);
 	return (0);
 }
