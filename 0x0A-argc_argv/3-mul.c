@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
 
 		while (s[i] != '\0')
 		{
-			putchar(s[i]);
+			_putchar(s[i]);
 			i++;
 		}
-		putchar('\n');
+		_putchar('\n');
 		return (1);
 	}
 	else
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 		for (i = 1; i < argc; i++)
 		{
-			num *= atoi(argv[i]);
+			num *= _atoi(argv[i]);
 		}
 		printf("%ld\n", num);
 	}
