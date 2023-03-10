@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int count = argc;
+	int count = argc - 1;
 
 	_putchar(count + '0');
 	_putchar('\n');
