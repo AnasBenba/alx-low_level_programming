@@ -2,6 +2,12 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+/**
+ * main - Entry point. Calculates the sum of arguments.
+ * @argc: Number of arguments.
+ * @argv: Array of arguments.
+ * Return: 0 or 1 if its not digits.
+ */
 int main(int argc, char *argv[])
 {
 	int i;
