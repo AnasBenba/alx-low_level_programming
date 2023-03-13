@@ -35,7 +35,7 @@ char *_strcpy(char *dest, char *src)
 char *_strdup(char *str)
 {
 	int len = 0;
-	char *dest = malloc(len + 1);
+	char *dest;
 
 	if (str == NULL)
 	{
@@ -45,6 +45,8 @@ char *_strdup(char *str)
 	{
 		len++;
 	}
+	dest = malloc(len + 1);
+
 	if (dest == NULL)
 	{
 		return (NULL);
