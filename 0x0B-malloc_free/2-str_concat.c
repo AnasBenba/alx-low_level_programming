@@ -15,9 +15,13 @@ char *str_concat(char *s1, char *s2)
 	int len2 = 0;
 	char *dest;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (0);
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
 	while (s1[len1] != '\0')
@@ -31,13 +35,13 @@ char *str_concat(char *s1, char *s2)
 	len = len1 + len2;
 	dest = malloc(len + 1);
 
-	_strcpy(dest, s1);
-	_strcat(dest, s2);
-
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
-	dest[len + 1] = '\0';
+
+	_strcpy(dest, s1);
+	_strcat(dest, s2);
+
 	return (dest);
 }
