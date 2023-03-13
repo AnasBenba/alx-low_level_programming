@@ -34,18 +34,17 @@ char *_strcpy(char *dest, char *src)
  */
 char *_strdup(char *str)
 {
+	int len = 0;
+	char *dest = malloc(len + 1);
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	int len = 0;
-
 	while (str[len] != '\0')
 	{
 		len++;
 	}
-	char *dest = malloc(len + 1);
-
 	if (dest == NULL)
 	{
 		return (NULL);
