@@ -2,24 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _memset -> function that fills memory with a constant byte
- * @b: character
- * @s: pointer to string
- * @n: number of bytes to be filled in the memory area
- * Return: a pointer to the memory area s
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
-	{
-		s[i] = b;
-	}
-	return (s);
-}
-
-/**
  * argstostr - concatenates all the arguments of a program
  * @ac: the number of arguments
  * @av: the array of arguments
@@ -28,8 +10,8 @@ char *_memset(char *s, char b, unsigned int n)
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, len;
-	char *str, *p;
+	int i, n, r = 0, l = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -37,27 +19,28 @@ char *argstostr(int ac, char **av)
 	}
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (n = 0; av[i][n]; n++)
 		{
-			len++;
+			l++;
 		}
-		len--;
 	}
-	str = malloc(sizeof(char) * len);
+	l += ac;
+	str = malloc(sizeof(char) * l + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	_memset(str, 0, len * sizeof(char));
-	p = str;
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		for (n = 0; av[i][n]; n++)
 		{
-			*p++ = av[i][j];
+			str[r] = av[i][n];
+			r++;
 		}
-		*p++ = '\n';
+		if (str[r] == '\0')
+		{
+			str[r++] = '\n';
+		}
 	}
-	*p = '\0';
 	return (str);
 }
