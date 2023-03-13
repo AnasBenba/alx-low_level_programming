@@ -23,7 +23,7 @@ char *create_array(unsigned int size, char c)
 
 	while (i < size)
 	{
-		if (c == 0)
+		if (s == NULL)
 		{
 			return (NULL);
 		}
