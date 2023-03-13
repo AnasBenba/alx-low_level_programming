@@ -2,48 +2,20 @@
 #include <stdlib.h>
 
 /**
- * _strcpy - function that copies the string pointed to by src
- * @src: pointer to string
- * @dest: pointer to string
+ * _memcpy -> function that copies memory area.
+ * @dest: pointer to the destination memory block
+ * @src: pointer to the source memory block
+ * @n: number of bytes from the memory area
  * Return: dest.
  */
-char *_strcpy(char *dest, char *src)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int len = 0;
-	int i = 0;
+	unsigned int i;
 
-	while (src[len] != '\0')
-	{
-		len++;
-	}
-	while (i < (len + 1))
+	for (i = 0; i < n; i++)
 	{
 		dest[i] = src[i];
-		i++;
 	}
-	return (dest);
-}
-
-/**
- * _strcat -> function that concatenates two strings
- * @dest: pointer to string
- * @src: pointer to string
- * Return: dest
- */
-char *_strcat(char *dest, char *src)
-{
-	int len = 0;
-	int i;
-
-	while (dest[len] != '\0')
-	{
-		len++;
-	}
-	for (i = 0; src[i] != '\0'; i++)
-	{
-		dest[len + i] = src[i];
-	}
-	dest[len + i] = '\0';
 	return (dest);
 }
 
@@ -83,8 +55,8 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	_strcpy(dest, s1);
-	_strcat(dest, s2);
+	_memcpy(dest, s1, len1);
+	_memcpy(dest + len1, s2, len2 + 1);
 
 	return (dest);
 }
