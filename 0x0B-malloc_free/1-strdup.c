@@ -24,7 +24,14 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-
+/**
+ * _strdup -> function that returns a pointer
+ *            to a newly allocated space in memory
+ * @str: pointer to the string to duplicate.
+ *
+ * Return: If str is NULL or if memory allocation fails, returns NULL.
+ *         Otherwise, returns a pointer to the duplicated string.
+ */
 char *_strdup(char *str)
 {
 	if (str == NULL)
@@ -39,9 +46,10 @@ char *_strdup(char *str)
 	}
 	char *dest = malloc(len + 1);
 
-	if (dest)
+	if (dest == NULL)
 	{
-		_strcpy(dest, str);
+		return (NULL);
 	}
+	_strcpy(dest, str);
 	return (dest);
 }
