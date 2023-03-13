@@ -28,8 +28,8 @@ char *_memcpy(char *dest, char *src, unsigned int n)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int len1 = 0;
-	int len2 = 0;
+	unsigned int len1 = 0;
+	unsigned int len2 = 0;
 
 	if (s1 == NULL)
 	{
