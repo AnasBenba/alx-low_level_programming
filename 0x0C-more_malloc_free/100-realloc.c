@@ -30,6 +30,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *r;
+	unsigned in count_size;
 
 	if (new_size <= old_size)
 	{
@@ -52,12 +53,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
+	if (old_size < new_size)
+	{
+		count_size = old_size;
+	}
+	else
+	{
+		count_size = new_size;
+	}
+
 	r = malloc(new_size);
 	if (r == NULL)
 	{
 		return (NULL);
 	}
-	_memcpy(r, ptr, old_size);
+	_memcpy(r, ptr, count_size);
 	free(ptr);
 	return (r);
 }
