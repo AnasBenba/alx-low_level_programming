@@ -60,7 +60,7 @@ char *_strcpy(char *dest, char *src)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int lenS1, lenS2;
+	unsigned int lenS1 = 0, lenS2 = 0;
 	char *dest;
 
 	while (s1[lenS1] != '\0')
