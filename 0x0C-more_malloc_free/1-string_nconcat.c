@@ -71,7 +71,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
-
 	while (s1[lenS1] != '\0')
 	{
 		lenS1++;
