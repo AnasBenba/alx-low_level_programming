@@ -63,6 +63,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int lenS1 = 0, lenS2 = 0;
 	char *dest;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+
 	while (s1[lenS1] != '\0')
 	{
 		lenS1++;
