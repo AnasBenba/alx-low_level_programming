@@ -1,24 +1,41 @@
 #include "variadic_functions.h"
 
-
+/**
+* print_char - prints a character
+* @list: list of arguments
+* Return: void
+*/
 void print_char(va_list list)
 {
 	printf("%c", va_arg(list, int));
 }
-
+/**
+* print_int - prints an integer
+* @list: list of arguments
+* Return: void
+*/
 void print_int(va_list list)
 {
 	printf("%d", va_arg(list, int));
 }
-
+/**
+* print_float - prints a float
+* @list: list of arguments
+* Return: void
+*/
 void print_float(va_list list)
 {
 	printf("%f", va_arg(list, double));
 }
-
+/**
+* print_string - prints a string
+* @list: list of arguments
+* Return: void
+*/
 void print_string(va_list list)
 {
 	char *str;
+
 	str = va_arg(list, char*);
 	if (str == NULL)
 	{
@@ -27,7 +44,11 @@ void print_string(va_list list)
 
 	printf("%s", str);
 }
-
+/**
+* print_all - prints anything, followed by a new line
+* @format: list of types of arguments passed to the function
+* Return: void
+*/
 void print_all(const char * const format, ...)
 {
 	int i, j;
@@ -43,7 +64,7 @@ void print_all(const char * const format, ...)
 	};
 	va_start(list, format);
 	i = 0;
-	while(format && format[i])
+	while (format && format[i])
 	{
 		j = 0;
 		while (form[j].c)
