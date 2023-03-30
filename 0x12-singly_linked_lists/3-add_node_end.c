@@ -20,6 +20,13 @@ int _strlen(const char *s)
 	return (len);
 }
 
+/**
+ * add_node_end - adds a new node at the end of a list_t list
+ * @head: pointer to a pointer to the head node
+ * @str: string to be added to the new node
+ *
+ * Return: pointer to the head node
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *tmp = malloc(sizeof(list_t));
