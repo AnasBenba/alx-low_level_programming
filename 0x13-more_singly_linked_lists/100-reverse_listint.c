@@ -6,7 +6,7 @@ listint_t *reverse_listint(listint_t **head)
 	listint_t *ptr = NULL;
 	listint_t *ptr1 = NULL;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		return (NULL);
 	}
