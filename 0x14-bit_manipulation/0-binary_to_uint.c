@@ -56,7 +56,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 	while (len)
 	{
-		if (!_isdigit(bReturn: 1 on success, -1 on failure[i]))
+		if (!_isdigit(b[i]))
 		{
 			return (0);
 		}
