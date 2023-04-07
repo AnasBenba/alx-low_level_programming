@@ -43,14 +43,14 @@ int _isdigit(int c)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int len = _strlen(b), i = 0;
+	int len, i = 0, j;
 	unsigned int num = 0, n = 1;
-	int j = len;
 
 	if (b == NULL)
-	{
 		return (0);
-	}
+
+	len = _strlen(b);
+	j = len;
 	if (len == 1)
 	{
 		if (b[i] == '1')
