@@ -51,7 +51,6 @@ unsigned int binary_to_uint(const char *b)
 	{
 		return (0);
 	}
-
 	if (len == 1)
 	{
 		if (b[i] == '1')
