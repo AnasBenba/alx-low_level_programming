@@ -1,6 +1,21 @@
 #include "main.h"
 
 /**
+* close_file - closes a file and exits if there is an error
+* @file: the file descriptor to close
+* Return: void
+*/
+void close_file(int file)
+{
+        int close_file = close(file);
+
+        if (close_file == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+                exit(100);
+        }
+}
+/**
 * copy_file - Copies the content of one file to another
 * @from: Pointer to the path of the source file
 * @to: Pointer to the path of the destination file
@@ -8,7 +23,7 @@
 */
 void copy_file(char *from, char *to)
 {
-	int file_to, file_from, bytes_read, bytes_written, close_from, close_to;
+	int file_to, file_from, bytes_read, bytes_written;
 	char buffer[1024];
 
 	file_from = open(from, O_RDONLY);
@@ -42,21 +57,6 @@ void copy_file(char *from, char *to)
 
 	close_file(file_from);
 	close_file(file_to);
-}
-/**
-* close_file - closes a file and exits if there is an error
-* @file: the file descriptor to close
-* Return: void
-*/
-void close_file(int file)
-{
-	int close_file = close(file);
-
-	if (close_file == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
-		exit(100);
-	}
 }
 /**
 * main - entry point function
