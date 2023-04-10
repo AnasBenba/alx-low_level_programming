@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
- * _strlen -> function that returns the length of a string.
- * @s: pointer to a string
- * Return: length of a string
- */
-int _strlen(char *s)
-{
-	int len = 0;
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		len++;
-		i++;
-	}
-	return (len);
-}
-/**
  * append_text_to_file - appends text to the end of a file
  * @filename: the name of the file
  * @text_content: the NULL-terminated string to append to the file
@@ -47,7 +29,13 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	len = _strlen(text_content);
+	if (text_content != NULL)
+	{
+		if (text_content[len])
+		{
+			len++;
+		}
+	}
 
 	numWrite = write(file, text_content, len);
 
