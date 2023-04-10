@@ -7,13 +7,13 @@
 */
 void close_file(int file)
 {
-        int close_file = close(file);
+	int close_file = close(file);
 
-        if (close_file == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
-                exit(100);
-        }
+	if (close_file == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+		exit(100);
+	}
 }
 /**
 * copy_file - Copies the content of one file to another
