@@ -16,7 +16,7 @@ int _strlen(char *s)
 		len++;
 		i++;
 	}
-	return (len);
+	return (len + 1);
 }
 /**
  * create_file - Creates a file and writes text_content into it.
