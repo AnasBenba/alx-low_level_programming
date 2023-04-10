@@ -36,15 +36,15 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	file = open(filename, O_WRONLY | O_APPEND);
 
-	if (file == -1)
+	if (file == 0)
 	{
 		return (-1);
 	}
 
-	if (text_content == NULL)
+	if (text_content != NULL)
 	{
 		close(file);
-		return (-1);
+		return (1);
 	}
 	else
 	{
