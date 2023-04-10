@@ -9,7 +9,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int file, len, numWrite;
+	int file, len = 0, numWrite;
 
 	if (filename == NULL)
 	{
@@ -31,7 +31,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		if (text_content[len])
+		while (text_content[len])
 		{
 			len++;
 		}
