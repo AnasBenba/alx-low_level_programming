@@ -28,11 +28,10 @@ size_t dlistint_len(const dlistint_t *h)
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	size_t len = dlistint_len(*h);
 	dlistint_t *ptr, *new;
 	unsigned int i = 0;
 
-	if (h == NULL || *h == NULL)
+	if (h == NULL || *h == NULL || idx > dlistint_len(*h))
 	{
 		return (NULL);
 	}
