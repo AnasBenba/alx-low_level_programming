@@ -18,7 +18,8 @@ size_t dlistint_len(const dlistint_t *h)
 	return (len);
 }
 /**
- * insert_dnodeint_at_index - Inserts a new node at a given position in a doubly linked list.
+ * insert_dnodeint_at_index - Inserts a new node at a
+ *                            given position in a doubly linked list.
  * @h: A pointer to the head of the doubly linked list.
  * @idx: The index where the new node should be inserted.
  * @n: The value to be stored in the new node.
@@ -42,14 +43,24 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		return (NULL);
 	}
-	while (i < idx - 1)
+	if (idx == 0)
 	{
-		ptr = ptr->next;
-		i++;
+		new->n = n;
+		new->next = *h;
+		(*h)->prev = new;
+		*h = new;
 	}
-	ptr1 = ptr->next;
-	new->n = n;
-	ptr->next = new;
-	new->next = ptr1;
+	else
+	{
+		while (i < idx - 1)
+		{
+			ptr = ptr->next;
+			i++;
+		}
+		ptr1 = ptr->next;
+		new->n = n;
+		ptr->next = new;
+		new->next = ptr1;
+	}
 	return (new);
 }
