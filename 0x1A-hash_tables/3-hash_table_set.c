@@ -10,30 +10,27 @@
 hash_node_t *create(const char *key, const char *value)
 {
 	hash_node_t *ptr = malloc(sizeof(hash_node_t));
+	char *key_dup, *value_dup;
 
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-
-	ptr->key = malloc(strlen(key) + 1);
-	if (ptr->key == NULL)
+	key_dup = strdup(key);
+	if (key_dup == NULL)
 	{
-		free(ptr);
+		free(key_dup);
 		return (NULL);
 	}
-	strcpy(ptr->key, key);
-
-	ptr->value = malloc(strlen(value) + 1);
-	if (ptr->value == NULL)
+	value_dup = strdup(value);
+	if (value_dup == NULL)
 	{
-		free(ptr->key);
-		free(ptr);
+		free(value_dup);
 		return (NULL);
 	}
-	strcpy(ptr->value, value);
 
-	ptr->next = NULL;
+	ptr->key = key_dup;
+	ptr->value = value_dup;
 
 	return (ptr);
 }
