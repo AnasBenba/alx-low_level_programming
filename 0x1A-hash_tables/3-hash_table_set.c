@@ -15,19 +15,26 @@ hash_node_t *create(const char *key, const char *value)
 	{
 		return (NULL);
 	}
+
 	ptr->key = malloc(strlen(key) + 1);
 	if (ptr->key == NULL)
 	{
+		free(ptr);
 		return (NULL);
 	}
+	strcpy(ptr->key, key);
+
 	ptr->value = malloc(strlen(value) + 1);
 	if (ptr->value == NULL)
 	{
+		free(ptr->key);
+		free(ptr);
 		return (NULL);
 	}
-	ptr->next = NULL;
-	strcpy(ptr->key, key);
 	strcpy(ptr->value, value);
+
+	ptr->next = NULL;
+
 	return (ptr);
 }
 
@@ -42,21 +49,31 @@ hash_node_t *create(const char *key, const char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *ptr;
+	hash_node_t *current;
 	unsigned long int index = key_index((unsigned char *)key, ht->size);
 
-	if (key == NULL || ht == NULL || *key == '\0')
+	if (value == NULL || key == NULL || ht == NULL || *key == '\0')
 	{
 		return (0);
 	}
 	ptr = create(key, value);
+	if (ptr == NULL)
+	{
+		return (0);
+	}
+
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = ptr;
 	}
 	else
 	{
-		ptr->next = ht->array[index];
-		ht->array[index] = ptr;
+		current = ht->array[index];
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = ptr;
 	}
 	return (1);
 }
