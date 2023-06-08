@@ -49,13 +49,20 @@ hash_node_t *create(const char *key, const char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *ptr;
+	char *value_dup;
 	unsigned long int index = key_index((unsigned char *)key, ht->size);
 
-	if (key == NULL || ht == NULL || *key == '\0')
+	if (value == NULL || key == NULL || ht == NULL || *key == '\0')
 	{
 		return (0);
 	}
-	ptr = create(key, value);
+
+	value_dup = strdup(value);
+	if (value_dup == NULL)
+	{
+		return (0);
+	}
+	ptr = create(key, value_dup);
 	if (ptr == NULL)
 	{
 		return (0);
