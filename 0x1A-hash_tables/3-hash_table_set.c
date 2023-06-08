@@ -77,7 +77,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ptr = create(key, value_dup);
 	if (ptr == NULL)
 	{
-		free(value_dup);
 		return (0);
 	}
 	ptr->next = ht->array[index];
