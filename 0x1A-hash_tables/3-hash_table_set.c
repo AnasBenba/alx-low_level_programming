@@ -67,13 +67,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(ht->array[i]->key, key))
 		{
+			free(value_dup);
 			free(ht->array[i]->value);
 			ht->array[i]->value = value_dup;
 			return (1);
 		}
 		i++;
 	}
-	ptr = create(key, value);
+	ptr = create(key, value_dup);
+	if (ptr == NULL)
+	{
+		free(value_dup);
+		return (0);
+	}
 	ptr->next = ht->array[index];
 	ht->array[index] = ptr;
 	return (1);
