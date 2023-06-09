@@ -4,7 +4,8 @@
  * hash_table_print - Prints a hash table.
  * @ht: The hash table to print.
  *
- * Description: Prints the key-value pairs of the hash table in the order they appear.
+ * Description: Prints the key-value pairs of the hash
+ *              table in the order they appear.
  *              The format is: {'key': 'value', 'key': 'value', ...}
  *              If @ht is NULL, nothing is printed.
  */
