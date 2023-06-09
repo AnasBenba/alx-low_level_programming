@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *ptr, *temp;
 	char *value_dup;
-	unsigned long int index;
+	unsigned long int index, i;
 
 	if (key == NULL || ht == NULL || *key == '\0')
 	{
