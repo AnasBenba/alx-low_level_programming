@@ -19,13 +19,12 @@ hash_node_t *create(const char *key, const char *value)
 	key_dup = strdup(key);
 	if (key_dup == NULL)
 	{
-		free(key_dup);
 		return (NULL);
 	}
 	value_dup = strdup(value);
 	if (value_dup == NULL)
 	{
-		free(value_dup);
+		free(key_dup);
 		return (NULL);
 	}
 
