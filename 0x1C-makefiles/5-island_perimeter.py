@@ -1,11 +1,15 @@
 #!/usr/bin/python3
+"""function def island_perimeter(grid): that returns the
+perimeter of the island described in grid"""
+
 
 def island_perimeter(grid):
     """
     Calculate the perimeter of the island described in the grid.
 
     Parameters:
-     grid (List[List[int]]): A list of lists of integers, where 0 represents a water zone and 1 represents a land zone.
+     grid (List[List[int]]): A list of lists of integers,
+     where 0 represents a water zone and 1 represents a land zone.
 
      Returns:
      int: The perimeter of the island.
