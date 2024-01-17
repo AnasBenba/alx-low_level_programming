@@ -71,4 +71,3 @@ int print_array(int *array, size_t i, size_t r)
 	}
 	return (0);
 }
-
